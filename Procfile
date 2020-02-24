@@ -1,1 +1,1 @@
-python3 -m rocket-bot
+web: python3 -m rocket-bot
