@@ -30,7 +30,7 @@ async def main(request):
     event = sansio.Event.from_http(request.headers, body, secret=secret)
 
     async with aiohttp.ClientSession() as session:
-        gh = gh_aiohttp.GitHubApi(session, "jhbell", oauth_token=oauth_token)
+        gh = gh_aiohttp.GitHubAPI(session, "jhbell", oauth_token=oauth_token)
         await router.dispatch(event, gh)
     return web.Response(status=200)
 
