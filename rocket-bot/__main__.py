@@ -16,7 +16,7 @@ async def pull_request_opened_event(event, gh, *args, **kwargs):
     url = f"@{issue_url}/reactions"
 
     await gh.post(url, data={"content": "rocket"},
-            accept="application/vnd.github.squirrel-girl-preview")
+            accept="application/vnd.github.squirrel-girl-preview+json")
 
 
 @routes.post("/")
