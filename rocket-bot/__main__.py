@@ -14,9 +14,12 @@ async def pull_request_opened_event(event, gh, *args, **kwargs):
     """ Whenever an issue is opened, greet the author and say thanks."""
     issue_url = event.data["pull_request"]["issue_url"]
     url = f"@{issue_url}/reactions"
+    accept = "application/vnd.github.squirrel-girl-preview+json"
+    print(issue_url)
+    print(url)
+    print(accept)
 
-    await gh.post(url, data={"content": "rocket"},
-            accept="application/vnd.github.squirrel-girl-preview+json")
+    await gh.post(url, data={"content": "rocket"}, accept=accept)
 
 
 @routes.post("/")
